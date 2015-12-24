@@ -1,0 +1,43 @@
+{
+  "author": {
+    "name": "Sean Lynch",
+    "email": "sean@lyn.ch",
+    "url": "https://github.com/sean-lynch"
+  },
+  "domainWhitelist": ["app.getsentry.com"],
+  "parameters": [
+    {
+      "label": "Sentry API Key",
+      "name": "key",
+      "type": "text",
+      "secure": true,
+      "required": true,
+      "helpText": "Provide your Sentry API key"
+    },
+    {
+      "label": "Sentry organization slug",
+      "name": "orgName",
+      "type": "text",
+      "required": true,
+      "helpText": "\"slug\" name of your organization"
+    },
+    {
+      "label": "Sentry project slug",
+      "name": "projectName",
+      "type": "text",
+      "required": true,
+      "helpText": "\"slug\" name of your project"
+    },
+    {
+      "label": "API host",
+      "name": "host",
+      "type": "hidden",
+      "default": "https://app.getsentry.com"
+    }
+  ],
+  "defaultLocale": "en",
+  "private": false,
+  "location": ["ticket_sidebar", "user_sidebar"],
+  "version": "1.0",
+  "frameworkVersion": "1.0"
+}

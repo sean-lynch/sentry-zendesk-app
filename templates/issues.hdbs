@@ -1,0 +1,23 @@
+{{#if issues}}
+
+  {{#each issues}}
+
+  <ul class="issue-summary">
+    <li>
+      <a href="{{this.permalink}}" target="_blank">
+        <strong>{{this.title}}</strong>
+      </a>
+    </li>
+    <li>
+      Status: {{this.status}}
+    </li>
+    <li>
+      First seen: {{this.firstSeen}}
+    </li>
+  </ul>
+
+  {{/each}}
+
+{{else}}
+  <p>None found</p>
+{{/if}}
