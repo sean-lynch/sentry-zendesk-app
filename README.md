@@ -1,18 +1,18 @@
 # Sentry Zendesk app
 
-The Sentry Zendesk app pulls in some data about the Sentry users in the Zendesk interface.
+Display Sentry issues for user being viewed in Zendesk.
 
 ## Project view
 
-    /app.js 				- Main logic for sidebar app
-    /app.css 				- CSS that Zendesk will load for app
-    /manifest.json			- Configuration file for app, also used by Zendesk
-    /assets			       	- empty, required by Zendesk
-    /templates				- where Zendesk loads handlebar templates from
-    /templates/layout.hdbs 	- Default Zendesk template, which all others are inserted into
-    /templates/results.hdbs	- Template for displaying search results
-    /templates/error.hdbs 	- Template to display when an error is received from API
-    /translations/en.json 	- mostly empty, required by Zendesk
+    /app.js                 - Main logic for Zendesk app
+    /app.css                - CSS that Zendesk will load for app
+    /manifest.json          - Configuration file for app, also used by Zendesk
+    /assets                 - contains Sentry icon, required by Zendesk
+    /templates              - where Zendesk loads handlebar templates from
+    /templates/layout.hdbs  - Default Zendesk template, which all others are inserted into
+    /templates/issues.hdbs  - Template for displaying issues for the current user
+    /templates/error.hdbs   - Template to display when an error is received from API
+    /translations/en.json   - mostly empty, required by Zendesk
 
 ## Testing the app locally
 
@@ -20,7 +20,7 @@ The app is deployed by the admin but can be tested locally before it's deployed.
 
 ### 1. Setting up the Zendesk tools
 
-We're going to use Zendesk tools to serve the local app in a way that the Zendesk interface can access. There's detailed instructions [here](https://support.zendesk.com/hc/en-us/articles/203691256) on what you can do with their tools if you're curious.
+Use Zendesk tools to serve the local app in a way that the Zendesk interface can access. There's detailed instructions [here](https://support.zendesk.com/hc/en-us/articles/203691256) on how to use their tools.
 
 First, install the tools:
 
@@ -36,7 +36,7 @@ Once installed, run the local development environment using
 
 ### 2. Telling Zendesk to use local apps
 
-It's straightforward, you'll need to add ```?zat=true``` to any Zendesk URL. For example:
+Add ```?zat=true``` to any Zendesk URL. For example:
 
     https://sentry.zendesk.com/agent/tickets/701?zat=true
 
